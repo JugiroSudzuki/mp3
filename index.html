@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<div>
+		<div>
+			<h1>Песня: <span class="text"></span></h1>
+		</div>
+		<div>
+			<iframe src="ssshhhiiittt_-_ajjsberg_71545664.mp3" class="ifrm"></iframe>
+		</div>
+		<div>
+			<button class="btn1">предыдущий трек</button>
+			<button class="btn2">следующий трек</button>
+		</div>
+	</div>
+
+	<script type="text/javascript">
+		let text = document.querySelector('.text');
+		let ifrm = document.querySelector('.ifrm');
+		let btn1 = document.querySelector('.btn1');
+		let btn2 = document.querySelector('.btn2');
+
+		let playlist = ['ssshhhiiittt_-_ajjsberg_71545664.mp3','Tetuji_Hayashi_feat_Miki_Matsubara_-_Stay_With_Me_71135615.mp3','Mother_Mother_-_Verbatim_66080937.mp3']
+		let index = 0;
+		text.innerHTML = playlist[0];
+		ifrm.src = 'ssshhhiiittt_-_ajjsberg_71545664.mp3','Tetuji_Hayashi_feat_Miki_Matsubara_-_Stay_With_Me_71135615.mp3','Mother_Mother_-_Verbatim_66080937.mp3';
+		btn1.onclick = function(){
+			index = index - 1;
+			text.innerHTML = playlist[index];
+			ifrm.src = playlist[index];
+			if(index < 0){
+				index = 2;
+				text.innerHTML = playlist[index];
+				ifrm.src = playlist[index];
+			}
+		}
+		btn2.onclick = function(){
+			index = index + 1;
+			text.innerHTML = playlist[index];
+			ifrm.src = playlist[index];
+			if(index == 3){
+				index = 0;
+				text.innerHTML = playlist[index];
+				ifrm.src = playlist[index];
+			}
+		}
+	</script>
+</body>
+</html>
